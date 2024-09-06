@@ -1,7 +1,7 @@
 export interface Reservation {
     id:string,
     checkInDate: Date,
-    checkOut: Date,
+    checkOutDate: Date,
     guestName: string,
     guestEmail: string,
     roomNumber: number
