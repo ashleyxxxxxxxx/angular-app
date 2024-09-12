@@ -30,10 +30,11 @@ export class ReservationFormComponent implements OnInit{
    
    let id = this.activatedRoute.snapshot.paramMap.get('id')
    if(id){
-    let reservation = this.reservationService.getReservation(id)
-    if(reservation)
+    this.reservationService.getReservation(id).subscribe(reservation =>{
+      if(reservation)
       this.reservationForm.patchValue(reservation)
-   }
+   })
+    }
   }
  
   reservationForm: FormGroup = new FormGroup({});
